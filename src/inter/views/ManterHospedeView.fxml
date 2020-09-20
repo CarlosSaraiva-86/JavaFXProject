@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inter.controller.ManterHospedeController">
+   <children>
+      <Button layoutX="212.0" layoutY="337.0" mnemonicParsing="false" onAction="#buscarHospede" prefHeight="25.0" prefWidth="149.0" text="Buscar" />
+      <Label layoutX="38.0" layoutY="33.0" text="Nome:" />
+      <TextField fx:id="txtNome" layoutX="38.0" layoutY="51.0" prefHeight="25.0" prefWidth="531.0" />
+      <Label layoutX="39.0" layoutY="92.0" text="Endereço:" />
+      <TextField fx:id="txtEndereco" layoutX="39.0" layoutY="110.0" prefHeight="25.0" prefWidth="531.0" />
+      <Label layoutX="38.0" layoutY="200.0" text="Telefone:" />
+      <TextField fx:id="txtTelefone" layoutX="38.0" layoutY="218.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="38.0" layoutY="144.0" text="RG:" />
+      <TextField fx:id="txtRG" layoutX="38.0" layoutY="162.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="38.0" layoutY="257.0" text="Email:" />
+      <TextField fx:id="txtEmail" layoutX="38.0" layoutY="275.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button layoutX="51.0" layoutY="337.0" mnemonicParsing="false" onAction="#salvarHospede" prefHeight="25.0" prefWidth="149.0" text="Salvar" />
+      <Button layoutX="488.0" layoutY="337.0" mnemonicParsing="false" onAction="#excluirHospede" prefHeight="25.0" prefWidth="81.0" text="Excluir" />
+      <TextField fx:id="txtId" disable="true" layoutX="519.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" />
+   </children>
+</AnchorPane>
