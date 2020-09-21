@@ -5,41 +5,58 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inter.controller.AlugarQuartoController">
    <children>
-      <DatePicker layoutX="21.0" layoutY="73.0" />
+      <DatePicker fx:id="dataIn" layoutX="21.0" layoutY="73.0" />
       <Label layoutX="21.0" layoutY="56.0" text="Data Check-in:" />
-      <DatePicker layoutX="21.0" layoutY="135.0" />
+      <DatePicker fx:id="dataOut" layoutX="21.0" layoutY="135.0" />
       <Label layoutX="21.0" layoutY="118.0" text="Data Check-out:" />
-      <Label layoutX="300.0" layoutY="56.0" text="Quarto:" />
-      <TextField layoutX="25.0" layoutY="200.0" />
+      <TextField fx:id="txtQtde" layoutX="25.0" layoutY="200.0" />
       <Label layoutX="24.0" layoutY="183.0" text="Numero de pessoas:" />
-      <Button layoutX="331.0" layoutY="141.0" mnemonicParsing="false" text="Buscar Quarto" />
-      <Button layoutX="194.0" layoutY="335.0" mnemonicParsing="false" text="Concluir Locação">
+      <Button layoutX="320.0" layoutY="206.0" mnemonicParsing="false" onAction="#buscarQuarto" text="Buscar Quarto" />
+      <Button layoutX="194.0" layoutY="294.0" mnemonicParsing="false" onAction="#concluirAluguel" text="Concluir Locação">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Label layoutX="313.0" layoutY="77.0" text="Tipo:" />
-      <Label layoutX="253.0" layoutY="98.0" text="Disponibilidade:" />
       <Label layoutX="24.0" layoutY="14.0" text="Hóspede:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="14.0" text="Carlos Augusto Saraiva Filho">
+      <Label fx:id="lblHospede" layoutX="87.0" layoutY="14.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="344.0" layoutY="56.0" text="48" />
-      <Label layoutX="342.0" layoutY="77.0" text="Suite simples" />
-      <Label layoutX="344.0" layoutY="98.0" text="Disponivel" />
-      <Button layoutX="491.0" layoutY="12.0" mnemonicParsing="false" text="Buscar Reserva" />
-      <Button layoutX="385.0" layoutY="12.0" mnemonicParsing="false" text="Buscar Hóspede" />
-      <Label layoutX="307.0" layoutY="118.0" text="Valor:" />
-      <Label layoutX="344.0" layoutY="118.0" text="210,00" />
+      <Button layoutX="491.0" layoutY="12.0" mnemonicParsing="false" onAction="#buscarReserva" text="Buscar Reserva" />
+      <Button layoutX="385.0" layoutY="12.0" mnemonicParsing="false" onAction="#buscarHospede" text="Buscar Hóspede" />
+      <GridPane layoutX="291.0" layoutY="71.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="92.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="112.0" minWidth="10.0" prefWidth="108.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Quarto:" />
+            <Label text="Tipo:" GridPane.rowIndex="1" />
+            <Label text="Disponibilidade:" GridPane.rowIndex="2" />
+            <Label text="Valor:" GridPane.rowIndex="3" />
+            <Label fx:id="lblValor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="lblNmQuarto" GridPane.columnIndex="1" />
+            <Label fx:id="lblTipo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblDisponibilidade" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
    </children>
 </AnchorPane>

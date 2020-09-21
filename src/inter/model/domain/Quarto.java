@@ -10,11 +10,10 @@ public class Quarto extends Base{
 		
 	}
 	
-	public Quarto(int nmQuarto, String tipo, String disponibilidade, float valor) {
+	public Quarto(int nmQuarto, String tipo, float valor) {
 		super();
 		this.nmQuarto = nmQuarto;
 		this.tipo = tipo;
-		this.disponibilidade = disponibilidade;
 		this.valor = valor;
 	}
 	public int getNmQuarto() {

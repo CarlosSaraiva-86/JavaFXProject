@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="inter.controller.BuscarReservaController">
+   <children>
+      <TableView fx:id="tblReserva" layoutX="23.0" layoutY="23.0" onMouseClicked="#clickItem" prefHeight="300.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="clnHospede" prefWidth="250.0" text="Hospede" />
+          <TableColumn fx:id="clnQuarto" prefWidth="62.0" text="Quarto" />
+            <TableColumn fx:id="clnEntrada" prefWidth="94.0" text="Entrada" />
+            <TableColumn fx:id="clnSaida" prefWidth="93.0" text="Saida" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

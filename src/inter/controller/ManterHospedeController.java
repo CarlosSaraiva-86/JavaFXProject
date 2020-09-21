@@ -39,7 +39,7 @@ public class ManterHospedeController {
 		Hospede hospede = new Hospede(txtNome.getText(), txtEndereco.getText(), txtRG.getText(), txtTelefone.getText(),
 				txtEmail.getText());
 		dao = HospedeDAO.getDAOConnected();
-		if (txtId.getText() == "") {
+		if (txtId.getText().isEmpty()) {
 			dao.create(hospede);
 		} else {
 			hospede.setId(Integer.parseInt(txtId.getText()));

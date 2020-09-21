@@ -12,16 +12,6 @@ public class PrincipalController {
 	@FXML 
 	private AnchorPane anchorPrincipal;
 	
-	@FXML
-	protected void exibirEncerrar(ActionEvent event) {
-		try {
-			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/encerrarEstadia.fxml"));
-			 anchorPrincipal.getChildren().setAll(a);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	}
 	
 	@FXML
 	protected void exibirAlugar(ActionEvent event) {
@@ -49,7 +39,7 @@ public class PrincipalController {
 	@FXML
 	protected void exibirServicos(ActionEvent event) {
 		try {
-			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/manterServicos.fxml"));
+			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/ManterServicosView.fxml"));
 			 anchorPrincipal.getChildren().setAll(a);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -60,7 +50,7 @@ public class PrincipalController {
 	@FXML
 	protected void exibirFechar(ActionEvent event) {
 		try {
-			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/quitarQuarto.fxml"));
+			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/EncerrarEstadiaView.fxml"));
 			 anchorPrincipal.getChildren().setAll(a);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -72,6 +62,17 @@ public class PrincipalController {
 	protected void exibirQuarto(ActionEvent event) {
 		try {
 			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/ManterQuartosView.fxml"));
+			 anchorPrincipal.getChildren().setAll(a);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}	
+	
+	@FXML
+	protected void exibirReserva(ActionEvent event) {
+		try {
+			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/ReservarQuartoView.fxml"));
 			 anchorPrincipal.getChildren().setAll(a);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

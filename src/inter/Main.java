@@ -1,11 +1,8 @@
 package inter;
 	
-import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 
 import inter.Main;
-import inter.model.database.Database;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -22,8 +19,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 			this.primaryStage = primaryStage;
-			this.primaryStage.setTitle("Projeto Interdisciplinar");
-			Connection connection = Database.getConnection(); 
+			this.primaryStage.setTitle("Projeto Hotel");
 			setLayoutPrincipal();
 	}
 	

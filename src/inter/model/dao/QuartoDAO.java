@@ -58,6 +58,24 @@ public class QuartoDAO {
 
 		return result;
 	}
+	
+	public Quarto get(int id) throws SQLException {
+		String sql = "SELECT * FROM quarto WHERE idQuarto = ?;";
+		Quarto model = new Quarto();
+
+		PreparedStatement stm = conn.prepareStatement(sql);
+		stm.setInt(1, id);
+		ResultSet set = stm.executeQuery();
+		while (set.next()) {
+			model.setId(set.getInt("idQuarto"));
+			model.setNmQuarto(set.getInt("nmQuarto"));
+			model.setTipo(set.getString("tipo"));
+			model.setDisponibilidade(set.getString("disponibilidade"));
+			model.setValor(set.getFloat("valor"));
+		}
+
+		return model;
+	}
 
 	public void update(Quarto model) throws SQLException {
 		String sql = "UPDATE quarto SET nmQuarto = ?, tipo = ?, disponibilidade = ?, valor = ? WHERE idQuarto = ?";
@@ -71,9 +89,17 @@ public class QuartoDAO {
 	}
 
 	public void delete(int Id) throws SQLException {
-		String sql = "DELETE FROM hospede WHERE idQuarto = ?";
+		String sql = "DELETE FROM quarto WHERE idQuarto = ?";
 		PreparedStatement stm = conn.prepareStatement(sql);
 		stm.setInt(1, Id);
+		stm.execute();
+	}
+	
+	public void updateDisponibilidade(Quarto model, String disponibilidade) throws SQLException {
+		String sql = "UPDATE quarto SET disponibilidade = ? WHERE idQuarto = ?";
+		PreparedStatement stm = conn.prepareStatement(sql);
+		stm.setString(1, disponibilidade);
+		stm.setInt(2, model.getId());
 		stm.execute();
 	}
 }

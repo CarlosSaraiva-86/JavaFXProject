@@ -54,20 +54,39 @@ public class HospedeDAO {
 			ResultSet set = stm.executeQuery();
 			
 			while(set.next()) {
-				Hospede m = new Hospede();
-				m.setId(set.getInt("idHospede"));
-				m.setNome(set.getString("nome"));
-				m.setEndereco(set.getString("endereco"));
-				m.setEmail(set.getString("email"));
-				m.setRg(set.getString("rg"));
-				m.setTelefone(set.getString("telefone"));
-				result.add(m);
+				Hospede model = new Hospede();
+				model.setId(set.getInt("idHospede"));
+				model.setNome(set.getString("nome"));
+				model.setEndereco(set.getString("endereco"));
+				model.setEmail(set.getString("email"));
+				model.setRg(set.getString("rg"));
+				model.setTelefone(set.getString("telefone"));
+				result.add(model);
 			}
 		} catch (SQLException e) {
 			System.out.println("Erro ao criar um novo Hospede!");
 			e.printStackTrace();
 		}		
 		return result;
+	}
+	
+	public Hospede get(int id) throws SQLException {
+		String sql = "SELECT * FROM hospede WHERE idHospede = ?;";
+		Hospede model = new Hospede();
+
+		PreparedStatement stm = conn.prepareStatement(sql);
+		stm.setInt(1, id);
+		ResultSet set = stm.executeQuery();
+		while (set.next()) {
+			model.setId(set.getInt("idHospede"));
+			model.setNome(set.getString("nome"));
+			model.setEndereco(set.getString("endereco"));
+			model.setEmail(set.getString("email"));
+			model.setRg(set.getString("rg"));
+			model.setTelefone(set.getString("telefone"));
+		}
+
+		return model;
 	}
 	
 	public void update(Hospede h) {

@@ -12,21 +12,20 @@
         <menus>
           <Menu mnemonicParsing="false" text="Hospede">
             <items>
-              <MenuItem fx:id="manterHospede" mnemonicParsing="false" onAction="#exibirHospede" text="Cadastro Hóspede" />
-              <MenuItem fx:id="fazerReserva" mnemonicParsing="false" onAction="#exibirHospede" text="Fazer Reserva" />
+              <MenuItem mnemonicParsing="false" onAction="#exibirHospede" text="Cadastro Hóspede" />
+              <MenuItem mnemonicParsing="false" onAction="#exibirReserva" text="Fazer Reserva" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Quartos">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#exibirQuarto" text="Cadastro Quarto" />
               <MenuItem mnemonicParsing="false" onAction="#exibirAlugar" text="Alugar Quarto" />
-              <MenuItem mnemonicParsing="false" onAction="#exibirEncerrar" text="Encerrar Estadia" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Serviços">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#exibirServicos" text="Cadastro Serviço" />
-                  <MenuItem mnemonicParsing="false" onAction="#exibirFechar" text="Encerrar Serviços" />
+                  <MenuItem mnemonicParsing="false" onAction="#exibirFechar" text="Encerrar Estadia" />
             </items>
           </Menu>
         </menus>

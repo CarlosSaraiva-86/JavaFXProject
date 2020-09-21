@@ -1,37 +1,54 @@
 package inter.model.domain;
 
-public class Aluguel {
-	private String dataEntrada;
-	private String dataSaida;
+import java.sql.Date;
+
+public class Aluguel extends Base{
+	private Date dataEntrada;
+	private Date dataSaida;
 	private Quarto quarto;
-	private Funcionario funcionario;
+	private Hospede hospede;
+	private int nmPessoas; 
 	
-	public Aluguel(String dataEntrada, String dataSaida, Quarto quarto, Funcionario funcionario) {
+	public Aluguel() {
+		
+	}
+	
+	public Aluguel(Date dataEntrada, Date dataSaida, int nmPessoas, Quarto quarto, Hospede hospede) {
 		super();
 		this.dataEntrada = dataEntrada;
 		this.dataSaida = dataSaida;
+		this.nmPessoas = nmPessoas;
 		this.quarto = quarto;
-		this.funcionario = funcionario;
-	}
-	
-	public Funcionario getFuncionario() {
-		return funcionario;
+		this.hospede = hospede;
 	}
 
-	public void setFuncionario(Funcionario funcionario) {
-		this.funcionario = funcionario;
+
+	public int getNmPessoas() {
+		return nmPessoas;
 	}
 
-	public String getDataEntrada() {
+	public void setNmPessoas(int nmPessoas) {
+		this.nmPessoas = nmPessoas;
+	}
+
+	public Hospede getHospede() {
+		return hospede;
+	}
+
+	public void setHospede(Hospede hospede) {
+		this.hospede = hospede;
+	}
+
+	public Date getDataEntrada() {
 		return dataEntrada;
 	}
-	public void setDataEntrada(String dataEntrada) {
+	public void setDataEntrada(Date dataEntrada) {
 		this.dataEntrada = dataEntrada;
 	}
-	public String getDataSaida() {
+	public Date getDataSaida() {
 		return dataSaida;
 	}
-	public void setDataSaida(String dataSaida) {
+	public void setDataSaida(Date dataSaida) {
 		this.dataSaida = dataSaida;
 	}
 	public Quarto getQuarto() {
