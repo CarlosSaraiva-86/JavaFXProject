@@ -53,7 +53,7 @@ public class AluguelDAO {
 
 		while (set.next()) {
 			Aluguel model = new Aluguel();
-			model.setId(set.getInt("idReserva"));
+			model.setId(set.getInt("idAluguel"));
 			model.setQuarto(quartoDao.get(set.getInt("idQuarto")));
 			model.setHospede(hospedeDao.get(set.getInt("idHospede")));
 			model.setDataEntrada(set.getDate("dataIn"));
@@ -64,8 +64,27 @@ public class AluguelDAO {
 
 		return result;
 	}
+	
+	public Aluguel get(int id) throws SQLException {
+		String sql = "SELECT * FROM aluguel WHERE idAluguel = ?;";
+		Aluguel model = new Aluguel();
 
-	public void delete(int Id) throws SQLException {
+		PreparedStatement stm = conn.prepareStatement(sql);
+		stm.setInt(1, id);
+		ResultSet set = stm.executeQuery();
+		while (set.next()) {
+			model.setId(set.getInt("idAluguel"));
+			model.setQuarto(quartoDao.get(set.getInt("idQuarto")));
+			model.setHospede(hospedeDao.get(set.getInt("idHospede")));
+			model.setDataEntrada(set.getDate("dataIn"));
+			model.setDataSaida(set.getDate("dataOut"));
+			model.setNmPessoas(set.getInt("nmPessoas"));
+		}
+
+		return model;
+	}
+
+	public void delete(int Id) throws SQLException {		
 		String sql = "DELETE FROM aluguel WHERE idAluguel = ?";
 		PreparedStatement stm = conn.prepareStatement(sql);
 		stm.setInt(1, Id);

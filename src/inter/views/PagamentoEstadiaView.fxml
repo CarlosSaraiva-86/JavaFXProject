@@ -1,50 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inter.controller.PagamentoEstadiaController">
    <children>
-      <Label layoutX="44.0" layoutY="34.0" text="Hóspede:">
+      <DatePicker fx:id="dataIn" disable="true" layoutX="40.0" layoutY="132.0" />
+      <Label layoutX="41.0" layoutY="115.0" text="Data Check-in:" />
+      <DatePicker fx:id="dataOut" disable="true" layoutX="246.0" layoutY="132.0" />
+      <Label layoutX="246.0" layoutY="115.0" text="Data Check-out:" />
+      <Label layoutX="41.0" layoutY="280.0" text="Total R$">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="107.0" layoutY="34.0" text="Carlos Augusto Saraiva Filho">
+      <Label fx:id="lblTotal" layoutX="140.0" layoutY="280.0">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <DatePicker disable="true" layoutX="41.0" layoutY="93.0" />
-      <Label layoutX="41.0" layoutY="76.0" text="Data Check-in:" />
-      <DatePicker disable="true" layoutX="41.0" layoutY="147.0" />
-      <Label layoutX="41.0" layoutY="130.0" text="Data Check-out:" />
-      <Label layoutX="41.0" layoutY="310.0" text="Total:">
+      <ComboBox fx:id="cbPagamento" layoutX="300.0" layoutY="284.0" prefHeight="25.0" prefWidth="266.0" />
+      <Label layoutX="300.0" layoutY="261.0" text="Escolha um Pagamento:" />
+      <GridPane layoutX="45.0" layoutY="22.0" prefHeight="61.0" prefWidth="378.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="70.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="311.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Hóspede:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblHospede" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Quarto:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblQuarto" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <GridPane layoutX="40.0" layoutY="179.0" prefHeight="60.0" prefWidth="288.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="218.0" minWidth="10.0" prefWidth="144.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="144.0" minWidth="10.0" prefWidth="144.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Hospedagem:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Serviços e Consumo:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTotalDiaria" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="lblTotalConsumo" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </children>
+      </GridPane>
+      <Button layoutX="196.0" layoutY="347.0" mnemonicParsing="false" onAction="#efetuarPagamento" text="Efetuar Pagamento">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
-      </Label>
-      <Label layoutX="169.0" layoutY="310.0" text="R$ 600,00">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="42.0" layoutY="200.0" text="Hospedagem:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="182.0" layoutY="202.0" text="R$ 300,00" />
-      <Label layoutX="40.0" layoutY="230.0" text="Serviços e Consumo:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="183.0" layoutY="231.0" text="R$ 300,00" />
-      <ComboBox layoutX="300.0" layoutY="309.0" prefHeight="25.0" prefWidth="266.0" />
-      <Label layoutX="300.0" layoutY="286.0" text="Escolha um Pagamento:" />
+      </Button>
    </children>
 </AnchorPane>

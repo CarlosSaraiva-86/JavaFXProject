@@ -24,8 +24,9 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Serviços">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#exibirServicos" text="Cadastro Serviço" />
+              <MenuItem mnemonicParsing="false" onAction="#cadastrarServicos" text="Cadastro Serviço" />
                   <MenuItem mnemonicParsing="false" onAction="#exibirFechar" text="Encerrar Estadia" />
+                  <MenuItem mnemonicParsing="false" onAction="#exibirServicos" text="Cadastro Consumo" />
             </items>
           </Menu>
         </menus>

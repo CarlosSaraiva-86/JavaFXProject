@@ -56,7 +56,7 @@ public class PrincipalController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-	}	
+	}
 	
 	@FXML
 	protected void exibirQuarto(ActionEvent event) {
@@ -73,6 +73,17 @@ public class PrincipalController {
 	protected void exibirReserva(ActionEvent event) {
 		try {
 			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/ReservarQuartoView.fxml"));
+			 anchorPrincipal.getChildren().setAll(a);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	}	
+	
+	@FXML
+	protected void cadastrarServicos(ActionEvent event) {
+		try {
+			 AnchorPane a = (AnchorPane) FXMLLoader.load(Main.class.getResource("views/CadastrarServicoView.fxml"));
 			 anchorPrincipal.getChildren().setAll(a);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block

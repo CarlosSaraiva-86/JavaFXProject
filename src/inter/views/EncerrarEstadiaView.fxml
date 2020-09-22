@@ -6,46 +6,124 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="371.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inter.controller.EncerrarEstadiaController">
    <children>
-      <Label layoutX="34.0" layoutY="24.0" text="Hóspede:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="97.0" layoutY="24.0" text="Carlos Augusto Saraiva Filho">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <DatePicker layoutX="31.0" layoutY="83.0" />
-      <Label layoutX="31.0" layoutY="66.0" text="Data Check-in:" />
-      <DatePicker layoutX="342.0" layoutY="83.0" />
-      <Label layoutX="342.0" layoutY="66.0" text="Data Check-out:" />
-      <TableView layoutX="31.0" layoutY="123.0" prefHeight="148.0" prefWidth="229.0">
+      <DatePicker fx:id="dataIn" disable="true" layoutX="31.0" layoutY="91.0" />
+      <Label layoutX="31.0" layoutY="74.0" text="Data Check-in:" />
+      <DatePicker fx:id="dataOut" disable="true" layoutX="342.0" layoutY="91.0" />
+      <Label layoutX="342.0" layoutY="74.0" text="Data Check-out:" />
+      <TableView fx:id="tblServico" layoutX="342.0" layoutY="131.0" prefHeight="148.0" prefWidth="229.0">
         <columns>
-          <TableColumn prefWidth="51.0" text="Diárias" />
-          <TableColumn prefWidth="114.0" text="Quarto" />
-            <TableColumn prefWidth="63.0" text="Valor" />
+          <TableColumn fx:id="clnServico" prefWidth="144.0" text="Serviços" />
+            <TableColumn fx:id="clnValor" prefWidth="84.0" text="Valor" />
         </columns>
       </TableView>
-      <TableView layoutX="342.0" layoutY="123.0" prefHeight="148.0" prefWidth="229.0">
-        <columns>
-          <TableColumn prefWidth="110.0" text="Serviços" />
-          <TableColumn prefWidth="43.0" text="Qtde" />
-            <TableColumn prefWidth="75.0" text="Valor" />
-        </columns>
-      </TableView>
-      <Label layoutX="342.0" layoutY="280.0" text="Total:">
+      <Label layoutX="350.0" layoutY="317.0" text="Total R$">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="453.0" layoutY="317.0">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <Button layoutX="38.0" layoutY="315.0" mnemonicParsing="false" onAction="#encerrarEstadia" text="Encerrar Estadia">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <GridPane layoutX="25.0" layoutY="4.0" prefHeight="60.0" prefWidth="323.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="74.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="0.0" prefWidth="247.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="lblHospede" prefHeight="20.0" prefWidth="214.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Quarto:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblQuarto" prefHeight="20.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Hóspede:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Button layoutX="439.0" layoutY="15.0" mnemonicParsing="false" onAction="#buscarEstadia" text="Buscar Estadia">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="31.0" layoutY="160.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="86.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="114.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Tipo:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Valor R$:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTipo" GridPane.columnIndex="1" />
+            <Label fx:id="lblValor" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Diárias:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDiaria" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Valor diaria:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblValorDiaria" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label layoutX="350.0" layoutY="279.0" text="Total Serviço R$">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="387.0" layoutY="282.0" text="R$ 300,00" />
-      <Button layoutX="189.0" layoutY="348.0" mnemonicParsing="false" text="Estender Diárias" />
-      <Button layoutX="311.0" layoutY="348.0" mnemonicParsing="false" text="Encerrar Estadia" />
+      <Label fx:id="lblTotalServico" layoutX="463.0" layoutY="279.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

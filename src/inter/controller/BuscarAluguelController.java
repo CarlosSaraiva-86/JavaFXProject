@@ -56,12 +56,12 @@ public class BuscarAluguelController implements Initializable {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}	
 	}
-	public Aluguel getReserva() {
+	public Aluguel getAluguel() {
 		return aluguel;
 	}
-	public void setReserva(Aluguel aluguel) {
+	public void setAluguel(Aluguel aluguel) {
 		this.aluguel = aluguel;
 	}
 	public Stage getDialogStage() {
